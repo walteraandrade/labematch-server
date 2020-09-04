@@ -8,11 +8,11 @@ export class User {
     private password: string,
     private fav_genres: string[],
     private picture: string,
-    private likes?: string[],
-    private liked_by?: string[],
-    private all_time?: string,
-    private been_listening?: string[],
-    private recommendations?: string[]
+    private likes?: string[] | undefined,
+    private liked_by?: string[] | undefined,
+    private all_time?: string | undefined,
+    private been_listening?: string[] | undefined,
+    private recommendations?: string[] | undefined
   ) {}
 
   public getId(): string {
@@ -31,19 +31,19 @@ export class User {
     return this.password;
   }
 
-  public getLikes(): string[] {
+  public getLikes(): string[] | undefined {
     return this.likes;
   }
 
-  public getLikedBy(): string[] {
+  public getLikedBy(): string[] | undefined {
     return this.liked_by;
   }
 
-  public getFavGenres(): string[] {
+  public getFavGenres(): string[] | undefined {
     return this.fav_genres;
   }
 
-  public getAllTime(): string {
+  public getAllTime(): string | undefined {
     return this.all_time;
   }
 
@@ -51,11 +51,11 @@ export class User {
     return this.picture;
   }
 
-  public getBeenListening(): string[] {
+  public getBeenListening(): string[] | undefined {
     return this.been_listening;
   }
 
-  public getRecommendations(): string[] {
+  public getRecommendations(): string[] | undefined {
     return this.recommendations;
   }
 }

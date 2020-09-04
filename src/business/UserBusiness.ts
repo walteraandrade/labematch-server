@@ -46,11 +46,11 @@ export class UserBusiness {
     return { accessToken };
   }
 
-  public async login(nickname: string, password: string): Promise<string> {
-    if (!nickname || !password) {
+  public async login(email: string, password: string): Promise<string> {
+    if (!email || !password) {
       throw new InvalidInputError("You need both parameters to log in!");
     }
-    const user = await this.userDatabase.fetchEmail(nickname);
+    const user = await this.userDatabase.fetchEmail(email);
 
     if (!user) {
       throw new NotFound("User not found");

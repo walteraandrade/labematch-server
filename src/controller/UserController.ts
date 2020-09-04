@@ -36,7 +36,7 @@ export class UserController {
   async login(req: Request, res: Response) {
     try {
       const token = await UserController.UserBusiness.login(
-        req.body.nickname,
+        req.body.email,
         req.body.password
       );
 

@@ -41,10 +41,10 @@ export class UserDatabase extends BaseDatabase {
           )`);
   }
 
-  public async fetchEmail(nickname: string): Promise<User | undefined> {
+  public async fetchEmail(email: string): Promise<User | undefined> {
     const result = await this.getConnection().raw(`
-    SELECT * FROM ${UserDatabase.TABLE_NAME} WHERE nickname = "${nickname}"`);
-
+    SELECT * FROM ${UserDatabase.TABLE_NAME} WHERE email = "${email}"`);
+    console.log(result);
     return this.toModel(result[0][0]);
   }
 }
