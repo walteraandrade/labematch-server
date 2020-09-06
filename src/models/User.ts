@@ -1,5 +1,3 @@
-import { InvalidInputError } from "../Error/InvalidInputError";
-
 export class User {
   constructor(
     private id: string,

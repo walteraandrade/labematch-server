@@ -168,7 +168,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/labematch-backend/dev/1599261516928-2020-09-04T23:18:36.928Z/labematch-backend.zip"
+                "S3Key": "serverless/labematch-backend/dev/1599415700947-2020-09-06T18:08:20.947Z/labematch-backend.zip"
               },
               "FunctionName": "labematch-backend-dev-app",
               "Handler": "src/lambda.handler",
@@ -322,7 +322,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1599261500188": {
+          "ApiGatewayDeployment1599415682741": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -522,7 +522,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/labematch-backend/dev/1599261516928-2020-09-04T23:18:36.928Z",
+    "artifactDirectoryName": "serverless/labematch-backend/dev/1599415700947-2020-09-06T18:08:20.947Z",
     "artifact": ""
   }
 }
