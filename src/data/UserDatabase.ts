@@ -13,12 +13,7 @@ export class UserDatabase extends BaseDatabase {
         dbModel.email,
         dbModel.password,
         dbModel.fav_genres,
-        dbModel.picture,
-        dbModel.likes,
-        dbModel.liked_by,
-        dbModel.all_time,
-        dbModel.been_listening,
-        dbModel.recommendations
+        dbModel.picture
       )
     );
   }
@@ -33,11 +28,6 @@ export class UserDatabase extends BaseDatabase {
               "${user.getPassword()}",
               "${user.getFavGenres()}",
               "${user.getPicture()}",
-              "${user.getLikes()}",
-              "${user.getLikedBy()}",
-              "${user.getAllTime()}",
-              "${user.getBeenListening()}",
-              "${user.getRecommendations()}"
           )`);
   }
 
