@@ -77,8 +77,10 @@ export class UserBusiness {
   public async fetchGenres(token: string): Promise<any> {
     const result = this.tokenGenerator.verify(token);
 
-    const user = await this.userDatabase.fetchData(result.id);
+    const user = (await this.userDatabase.fetchData(result.id)) as any;
 
-    return user?.getFavGenres();
+    const genres = user.getFavGenres().split(",");
+
+    return genres;
   }
 }

@@ -41,7 +41,7 @@ export class UserDatabase extends BaseDatabase {
   public async fetchData(id: string): Promise<User | undefined> {
     const result = await this.getConnection().raw(`
     SELECT * FROM ${UserDatabase.TABLE_NAME} WHERE id = "${id}"`);
-
+    console.log(result);
     return this.toModel(result[0][0]);
   }
 }
