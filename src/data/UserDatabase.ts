@@ -38,10 +38,16 @@ export class UserDatabase extends BaseDatabase {
     return this.toModel(result[0][0]);
   }
 
-  public async fetchData(id: string): Promise<User | undefined> {
+  public async fetchData(id: string): Promise<Object | undefined> {
     const result = await this.getConnection().raw(`
     SELECT * FROM ${UserDatabase.TABLE_NAME} WHERE id = "${id}"`);
-    console.log(result);
-    return this.toModel(result[0][0]);
+    const userData = result[0][0];
+    const user = {
+      name: userData.name,
+      email: userData.email,
+      favGenres: userData.fav_genres.split(","),
+      picture: userData.picture,
+    };
+    return user;
   }
 }

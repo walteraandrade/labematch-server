@@ -51,14 +51,14 @@ export class UserController {
     BaseDatabase.destroyConnection();
   }
 
-  async fetchData(req: Request, res: Response) {
+  async fetchProfile(req: Request, res: Response) {
     try {
       const token = req.headers.token as string;
 
-      const result = await UserController.UserBusiness.fetchGenres(token);
+      const result = await UserController.UserBusiness.fetchUserProfile(token);
 
       res.status(200).send({
-        message: result,
+        user: result,
       });
     } catch (err) {
       res.status(400).send({

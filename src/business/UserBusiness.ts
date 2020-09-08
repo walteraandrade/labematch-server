@@ -74,13 +74,14 @@ export class UserBusiness {
     return token;
   }
 
-  public async fetchGenres(token: string): Promise<any> {
+  public async fetchUserProfile(token: string): Promise<Object> | undefined {
     const result = this.tokenGenerator.verify(token);
 
-    const user = (await this.userDatabase.fetchData(result.id)) as any;
-
-    const genres = user.getFavGenres().split(",");
-
-    return genres;
+    const user = await this.userDatabase.fetchData(result.id);
+    if (user) {
+      return user;
+    } else {
+      ("User not found");
+    }
   }
 }

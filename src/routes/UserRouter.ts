@@ -9,4 +9,4 @@ userRouter.post("/signup", userController.signUp);
 
 userRouter.post("/login", userController.login);
 
-userRouter.get("/fetchGenres", userController.fetchData);
+userRouter.get("/fetchProfile", userController.fetchProfile);
