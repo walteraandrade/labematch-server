@@ -50,4 +50,21 @@ export class UserController {
     }
     BaseDatabase.destroyConnection();
   }
+
+  async fetchData(req: Request, res: Response) {
+    try {
+      const token = req.headers.token as string;
+
+      const result = await UserController.UserBusiness.fetchGenres(token);
+
+      res.status(200).send({
+        message: result,
+      });
+    } catch (err) {
+      res.status(400).send({
+        message: err.message,
+      });
+    }
+    BaseDatabase.destroyConnection();
+  }
 }

@@ -5,6 +5,8 @@ import { IdGenerator } from "../middleware/IdGenerator";
 import { InvalidInputError } from "../Error/InvalidInputError";
 import { NotFound } from "../Error/NotFound";
 import { User } from "../models/User";
+import { Unauthorized } from "../Error/Unauthorized";
+import { userRouter } from "../routes/UserRouter";
 
 export class UserBusiness {
   constructor(
@@ -70,5 +72,13 @@ export class UserBusiness {
     });
 
     return token;
+  }
+
+  public async fetchGenres(token: string): Promise<any> {
+    const result = this.tokenGenerator.verify(token);
+
+    const user = await this.userDatabase.fetchData(result.id);
+
+    return user?.getFavGenres();
   }
 }

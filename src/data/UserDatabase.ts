@@ -27,14 +27,21 @@ export class UserDatabase extends BaseDatabase {
               "${user.getEmail()}",
               "${user.getPassword()}",
               "${user.getFavGenres()}",
-              "${user.getPicture()}",
+              "${user.getPicture()}"
           )`);
   }
 
   public async fetchEmail(email: string): Promise<User | undefined> {
     const result = await this.getConnection().raw(`
     SELECT * FROM ${UserDatabase.TABLE_NAME} WHERE email = "${email}"`);
-    console.log(result);
+
+    return this.toModel(result[0][0]);
+  }
+
+  public async fetchData(id: string): Promise<User | undefined> {
+    const result = await this.getConnection().raw(`
+    SELECT * FROM ${UserDatabase.TABLE_NAME} WHERE id = "${id}"`);
+
     return this.toModel(result[0][0]);
   }
 }
