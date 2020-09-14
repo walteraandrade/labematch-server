@@ -67,4 +67,22 @@ export class UserController {
     }
     BaseDatabase.destroyConnection();
   }
+
+  async fetchMatches(req: Request, res: Response) {
+    try {
+      const id: string = req.headers.token as string;
+      const page: number = req.query.page as any;
+
+      const result = await UserController.UserBusiness.fetchMatches(id, page);
+
+      res.status(200).send({
+        result: result,
+      });
+    } catch (e) {
+      res.status(400).send({
+        error: e.message,
+      });
+    }
+    BaseDatabase.destroyConnection();
+  }
 }

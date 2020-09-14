@@ -10,3 +10,5 @@ userRouter.post("/signup", userController.signUp);
 userRouter.post("/login", userController.login);
 
 userRouter.get("/fetchProfile", userController.fetchProfile);
+
+userRouter.get("/fetchMatches", userController.fetchMatches);

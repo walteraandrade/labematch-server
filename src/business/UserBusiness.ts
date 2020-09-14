@@ -74,7 +74,7 @@ export class UserBusiness {
     return token;
   }
 
-  public async fetchUserProfile(token: string): Promise<Object> | undefined {
+  public async fetchUserProfile(token: string): Promise<any> {
     const result = this.tokenGenerator.verify(token);
 
     const user = await this.userDatabase.fetchData(result.id);
@@ -83,5 +83,15 @@ export class UserBusiness {
     } else {
       ("User not found");
     }
+  }
+
+  public async fetchMatches(id: string, page: any) {
+    const offset: number = page++;
+
+    const result = this.tokenGenerator.verify(id);
+
+    const match = await this.userDatabase.fetchMatches(result.id, offset);
+
+    return match;
   }
 }

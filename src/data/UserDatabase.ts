@@ -50,4 +50,21 @@ export class UserDatabase extends BaseDatabase {
     };
     return user;
   }
+
+  public async fetchMatches(
+    id: string,
+    offset: number
+  ): Promise<Object | undefined> {
+    const result = await this.getConnection().raw(`
+    SELECT * FROM ${UserDatabase.TABLE_NAME} WHERE id <> '${id}' LIMIT 1 OFFSET ${offset}`);
+
+    const userData = result[0][0];
+    const user = {
+      name: userData.name,
+      email: userData.email,
+      picture: userData.picure,
+      favGenres: userData.fav_genres.split(","),
+    };
+    return user;
+  }
 }
