@@ -168,7 +168,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/labematch-backend/dev/1599673773300-2020-09-09T17:49:33.300Z/labematch-backend.zip"
+                "S3Key": "serverless/labematch-backend/dev/1600121688952-2020-09-14T22:14:48.952Z/labematch-backend.zip"
               },
               "FunctionName": "labematch-backend-dev-app",
               "Handler": "src/lambda.handler",
@@ -196,14 +196,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersioneOm1bNjDz9XfRBvkmWi87ungI68erLT8kGKPxjyqeA": {
+          "AppLambdaVersionVGAiTYDpS694v0LCksSIiF72y9tNvIaZZaDzIfus5JQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "OovZd1Pj3/TAUkOz007Q3Ikgm+THhGDjY0lWGLeCm80="
+              "CodeSha256": "PrgW2/srGGW85ILyxyqpj4ss/pnDq12fjtTl0ByOWQo="
             }
           },
           "ApiGatewayRestApi": {
@@ -322,7 +322,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1599673756137": {
+          "ApiGatewayDeployment1600121672860": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -382,7 +382,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersioneOm1bNjDz9XfRBvkmWi87ungI68erLT8kGKPxjyqeA"
+              "Ref": "AppLambdaVersionVGAiTYDpS694v0LCksSIiF72y9tNvIaZZaDzIfus5JQ"
             }
           },
           "ServiceEndpoint": {
@@ -514,7 +514,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersioneOm1bNjDz9XfRBvkmWi87ungI68erLT8kGKPxjyqeA"
+        "versionLogicalId": "AppLambdaVersionVGAiTYDpS694v0LCksSIiF72y9tNvIaZZaDzIfus5JQ"
       }
     },
     "serviceFilename": "serverless.yml",
@@ -522,7 +522,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/labematch-backend/dev/1599673773300-2020-09-09T17:49:33.300Z",
+    "artifactDirectoryName": "serverless/labematch-backend/dev/1600121688952-2020-09-14T22:14:48.952Z",
     "artifact": ""
   }
 }

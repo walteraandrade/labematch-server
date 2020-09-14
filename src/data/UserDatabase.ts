@@ -62,7 +62,7 @@ export class UserDatabase extends BaseDatabase {
     const user = {
       name: userData.name,
       email: userData.email,
-      picture: userData.picure,
+      picture: userData.picture,
       favGenres: userData.fav_genres.split(","),
     };
     return user;
