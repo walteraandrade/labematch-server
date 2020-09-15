@@ -12,3 +12,5 @@ userRouter.post("/login", userController.login);
 userRouter.get("/fetchProfile", userController.fetchProfile);
 
 userRouter.get("/fetchMatches", userController.fetchMatches);
+
+userRouter.get("/fetchPageNumbers", userController.fetchPageNumbers);

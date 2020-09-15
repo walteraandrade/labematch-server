@@ -85,4 +85,19 @@ export class UserController {
     }
     BaseDatabase.destroyConnection();
   }
+
+  async fetchPageNumbers(req: Request, res: Response) {
+    try {
+      const token = req.headers.token as string;
+      const result = await UserController.UserBusiness.fetchPageNumbers(token);
+
+      res.status(200).send({
+        message: result,
+      });
+    } catch (e) {
+      res.status(e.stausCode | 400).send({
+        error: e,
+      });
+    }
+  }
 }

@@ -67,4 +67,11 @@ export class UserDatabase extends BaseDatabase {
     };
     return user;
   }
+
+  public async fetchPageNumbers(): Promise<number | undefined> {
+    const result = await this.getConnection().raw(`
+    SELECT COUNT(id) AS NumberOfUsers FROM labematch_users;`);
+
+    return result[0][0].NumberOfUsers;
+  }
 }

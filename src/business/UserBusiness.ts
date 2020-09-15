@@ -94,4 +94,13 @@ export class UserBusiness {
 
     return match;
   }
+
+  public async fetchPageNumbers(token: string) {
+    const auth = this.tokenGenerator.verify(token);
+    if (auth) {
+      const result = await this.userDatabase.fetchPageNumbers();
+
+      return result;
+    }
+  }
 }
